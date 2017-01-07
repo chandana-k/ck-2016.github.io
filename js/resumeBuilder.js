@@ -16,14 +16,14 @@ var work = {
 	"jobs": [
 		{
 			"employer" : "Blackberry",
-			"title" : "Prospective software developer",
+			"title" : "Associate Software Developer",
 			"location": "Cambridge, Boston, MA",
 			"datesWorked": "Jan 2012 - July 2013",
 			"description": "Worked on Smartphone and Tablet applications for Blackberry. The Apps were published in the Blackberry App world. The App won a Blackberry Playbook Tablet and Z10 Smartphone."
 		},
 		{
 			"employer" : "Blackberry",
-			"title" : "Prospective software developer",
+			"title" : "Associate Software Developer",
 			"location": "NYC, USA",
 			"datesWorked": "June 2012",
 			"description": "Attended couple of developer conferences at NYC and Boston. Blackberry Jam Tour at NYC"
