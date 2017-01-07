@@ -1,6 +1,6 @@
 var bio = {
 	"name": "Chandana Katika",
-//	"role": "Software Developer",
+	"role": "Software Developer",
 	"contacts": {
 		"email": "chandanakatika@gmail.com",
 		"github": "ck-2016",
@@ -9,41 +9,45 @@ var bio = {
 	},
 	"picture": "images/fry.jpg",
 	"welcomeMessage": "Hi, Welcome and Thanks for stopping by!",
-	"skills": ["Python", "HTML", "CSS3", "Javascript"]
+	"skills": ["Python", "HTML5", "CSS3", "Javascript"]
 };
 
 var work = {
 	"jobs": [
 		{
-			
-			
+			"employer" : "Blackberry",
+			"title" : "Prospective software developer",
 			"location": "Cambridge, Boston, MA",
 			"datesWorked": "Jan 2012 - July 2013",
 			"description": "Worked on Smartphone and Tablet applications for Blackberry. The Apps were published in the Blackberry App world. The App won a Blackberry Playbook Tablet and Z10 Smartphone."
 		},
 		{
-			
+			"employer" : "Blackberry",
+			"title" : "Prospective software developer",
 			"location": "NYC, USA",
 			"datesWorked": "June 2012",
 			"description": "Attended couple of developer conferences at NYC and Boston. Blackberry Jam Tour at NYC"
 		},
 		{
-			
+			"employer" : "Dr.Bachar Saba",
+			"title" : "Dental Observership",
 			"location": "Walpole, Boston, MA",
 			"datesWorked": "Jan 2012 - July 2012",
 			"description": "Dental Observership under Dr. Bachar Saba, DDS"
 		},
 		
 		{
-			
+			"employer" : "Dr.Yamuna Bai, Dr. Srivastava",
+			"title" : "Associate Dentist",
 			"location": "Bangalore, Karnataka, India",
 			"datesWorked": "Nov 2008 - nov 2010",
 			"description": "Worked as Associate Dentist in a couple of dental clinics"
 		},
 
 		{
-			
-			"location": "M.R. Ambedkar Dental College and Hospital, Bangalore, Karnataka, India",
+			"employer" : "M.R. Ambedkar dental college and hospital",
+			"title" : "Dental Internship",
+			"location": "Bangalore, Karnataka, India",
 			"datesWorked": "Jan 2007 - Oct 2008",
 			"description": "As part of One year Internship, Conducted Dental Camps in rural parts of the state, schools and treated children with physical disability at spastic societies."
 		}	
@@ -61,28 +65,33 @@ var education = {
 	],
 	"onlineCourses": [
 	    { "school": "Udacity",
-			"title": "Introduction to Programming Nanodegree",
+		     "title": "Introduction to Programming Nanodegree",
 			"completed": "December 2016",
+			"url" : "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
 			
 		},
 		{ "school": "Code Academy",
 			"title": "Javascript",
 			"completed": "September 2015",
+			"url" : "https://www.codecademy.com/learn/javascript"
 			
 		},
 		{ "school": "Code Academy",
 			"title": "HTML, CSS3",
 			"completed": "July 2015",
+			"url" : "https://www.codecademy.com/learn/web"
 			
 		},
-		{ "school": "Coursera, Code School",
+		{ "school": "Coursera",
 			"title": "Python Programming",
 			"completed": "March 2015",
+			"url" : "https://www.coursera.org/learn/python"
 			
 		},
 		{ "school": "Udacity",
 			"title": "Basics in Computer Sciences",
 			"completed": "August 2014",
+			"url" : "https://www.udacity.com/course/intro-to-computer-science--cs101"
 			
 		},	
 		
@@ -94,16 +103,14 @@ var projects = {
 		{
 			"title": "Created an online movie website using HTML5 and CSS3",
 			"datesWorked": "August 2016",
-			"description": "Created an online movie website using HTML5 and CSS3 as part of Udacity's Intro to Programming Nanodegree " 
-//            "images": ["images/frogger.jpg"],
+			"description": "Created an online movie website using HTML5 and CSS3 as part of Udacity's Intro to Programming Nanodegree ",
+            "url": "projects/fresh_tomatoes.html"
 		},
 		{
 			"title": "Online Portfolio",
 			"datesWorked": "December 2016",
-			"description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer " +
-			"Nanodegree.",
-//			"images": ["images/portfolio.jpg"],
-//			"url": "http://www.cherylcourt.ca/"
+			"description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer " + "Nanodegree.",
+			"url": "index.html"
 		},
 		
 	]
@@ -177,17 +184,18 @@ projects.display = function() {
 			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
 			var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].datesWorked);
 			var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+            var formattedProjecturl = HTMLprojectUrl.replace("%data%", projects.projects[i].url);
 
 			$(".project-entry:last").append(formattedProjectTitle);
 			$(".project-entry:last").append(formattedProjectDates);
 			$(".project-entry:last").append(formattedProjectDescription);
+			//$(".project-entry:last").append(formattedProjecturl);
 
 			for(img in projects.projects[i].images) {
 				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
 				$(".project-entry:last").append(formattedProjectImage);
 			}
-			
-
+		
 		}
 	}
 }
@@ -201,15 +209,15 @@ education.display = function() {
 
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
 			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].datesAttended);
+			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].yearsAttended);
 			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);			
-			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
+			var formattedSchoolGPA = HTMLschoolGPA.replace("%data%", education.schools[i].GPA);
 			//var formattedSchoolMinor = HTMLschoolMinor.replace("%data%", education.schools[i].minor);
 
 			$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
 			$(".education-entry:last").append(formattedSchoolDates);
 			$(".education-entry:last").append(formattedSchoolLocation);
-			$(".education-entry:last").append(formattedSchoolMajor);
+			$(".education-entry:last").append(formattedSchoolGPA);
 			//$(".education-entry:last").append(formattedSchoolMinor);
 		}
 
@@ -224,7 +232,7 @@ education.display = function() {
 
 				$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 				$(".education-entry:last").append(formattedOnlineDates);
-				$(".education-entry:last").append(formattedOnlineURL);
+				//$(".education-entry:last").append(formattedOnlineURL);
 			}
 		}
 		
