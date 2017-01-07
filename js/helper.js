@@ -121,25 +121,30 @@ function initializeMap() {
     function locationFinder() {
 
         // initializes an empty array
-        var locations = [];
+         var locations = [];
 
-        // adds the single location property from bio to the locations array
-        locations.push(bio.contacts.location);
+    // adds the single location property from bio to the locations array
+    locations.push(bio.contacts.location);
 
-        // iterates through school locations and appends each location to
-        // the locations array
-        for (var school in education.schools) {
-            locations.push(education.schools[school].location);
-        }
+    // iterates through school locations and appends each location to
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide:
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    education.schools.forEach(function(school){
+      locations.push(school.location);
+    });
 
-        // iterates through work locations and appends each location to
-        // the locations array
-        for (var job in work.jobs) {
-            locations.push(work.jobs[job].location);
-        }
+    // iterates through work locations and appends each location to
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide:
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    work.jobs.forEach(function(job){
+      locations.push(job.location);
+    });
 
-        return locations;
-    }
+    return locations;
+  }
+
 
     /*
     createMapMarker(placeData) reads Google Places search results to create map pins.
@@ -203,19 +208,17 @@ function initializeMap() {
         var service = new google.maps.places.PlacesService(map);
 
         // Iterates through the array of locations, creates a search object for each location
-        for (var place in locations) {
+        locations.forEach(function(place){
+      // the search request object
+      var request = {
+        query: place
+      };
 
-            // the search request object
-            var request = {
-                query: locations[place]
-            };
-
-            // Actually searches the Google Maps API for location data and runs the callback
-            // function with the search results after each search.
-            service.textSearch(request, callback);
-        }
-    }
-
+      // Actually searches the Google Maps API for location data and runs the callback
+      // function with the search results after each search.
+      service.textSearch(request, callback);
+    });
+  }
     // Sets the boundaries of the map based on pin locations
     window.mapBounds = new google.maps.LatLngBounds();
 
