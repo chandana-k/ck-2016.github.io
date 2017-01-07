@@ -7,7 +7,7 @@ var bio = {
 		"twitter": "@chandanakatika",
 		"location": "Cary, North Carolina, USA"
 	},
-//	"picture": "images/me.png",
+	"picture": "images/fry.jpg",
 	"welcomeMessage": "Hi, Welcome and Thanks for stopping by!",
 	"skills": ["Python", "HTML", "CSS3", "Javascript"]
 };
@@ -39,7 +39,7 @@ var work = {
 			"location": "Bangalore, Karnataka, India",
 			"datesWorked": "Nov 2008 - nov 2010",
 			"description": "Worked as Associate Dentist in a couple of dental clinics"
-		}
+		},
 
 		{
 			
@@ -96,7 +96,7 @@ var projects = {
 			"datesWorked": "August 2016",
 			"description": "Created an online movie website using HTML5 and CSS3 as part of Udacity's Intro to Programming Nanodegree " 
 //            "images": ["images/frogger.jpg"],
-//		},
+		},
 		{
 			"title": "Online Portfolio",
 			"datesWorked": "December 2016",
@@ -113,7 +113,7 @@ var projects = {
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
-var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+//var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 var formattedContactInfo = [];
 formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
@@ -125,7 +125,7 @@ formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location))
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").append(formattedBioPic);
-$("#header").append(formattedWelcomeMsg);
+//$("#header").append(formattedWelcomeMsg);
 
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
@@ -204,13 +204,13 @@ education.display = function() {
 			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].datesAttended);
 			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);			
 			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
-			var formattedSchoolMinor = HTMLschoolMinor.replace("%data%", education.schools[i].minor);
+			//var formattedSchoolMinor = HTMLschoolMinor.replace("%data%", education.schools[i].minor);
 
 			$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
 			$(".education-entry:last").append(formattedSchoolDates);
 			$(".education-entry:last").append(formattedSchoolLocation);
 			$(".education-entry:last").append(formattedSchoolMajor);
-			$(".education-entry:last").append(formattedSchoolMinor);
+			//$(".education-entry:last").append(formattedSchoolMinor);
 		}
 
 		if(education.onlineCourses.length > 0) {
