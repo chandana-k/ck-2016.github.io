@@ -7,7 +7,7 @@ var bio = {
 		"twitter": "@chandanakatika",
 		"location": "Cary, North Carolina, USA"
 	},
-	"picture": "images/fry.jpg",
+	"picture": "images/smiley_emoticon.jpg",
 	"welcomeMessage": "Hi, Welcome and Thanks for stopping by!",
 	"skills": ["Python", "HTML5", "CSS3", "Javascript"]
 };
@@ -207,7 +207,7 @@ education.display = function() {
 		for(i in education.schools) {
 			$("#education").append(HTMLschoolStart);
 
-			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
+			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", "#");
 			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
 			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].yearsAttended);
 			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);			
