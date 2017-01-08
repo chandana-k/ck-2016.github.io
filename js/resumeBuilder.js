@@ -157,7 +157,7 @@ bio.display = function() {
           }
         }
     }
-}
+};
 bio.display();
 
 //Load Work content
