@@ -125,7 +125,7 @@ var projects = {
 
 var data = '%data%';
 
-
+//Load Bio content
 bio.display = function() {
     if (bio.skills.length > 0) {
         var formattedName = HTMLheaderName.replace(data, bio.name);
@@ -160,6 +160,7 @@ bio.display = function() {
 }
 bio.display();
 
+//Load Work content
 work.display = function() {
     if (work.jobs.length > 0) {
         $("#workExperience").append(HTMLworkStart);
@@ -182,6 +183,7 @@ work.display = function() {
 };
 work.display();
 
+//Load Projects content
 projects.display = function() {
     if (projects.projects.length > 0) {
         for (var i=0; i < projects.projects.length; i++) {
@@ -206,6 +208,7 @@ projects.display = function() {
 };
 projects.display();
 
+//Load Education content
 education.display = function() {
     if (education.schools.length > 0 || education.onlineCourses.length > 0) {
         for (var i=0; i < education.schools.length; i++) {
