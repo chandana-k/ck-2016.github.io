@@ -245,7 +245,6 @@ education.display = function() {
             }
           }    
         }
-
     }
 };
 education.display();
