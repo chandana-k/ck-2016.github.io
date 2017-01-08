@@ -125,6 +125,7 @@ var projects = {
 
 var data = '%data%';
 
+
 bio.display = function() {
     if (bio.skills.length > 0) {
         var formattedName = HTMLheaderName.replace(data, bio.name);
@@ -195,7 +196,7 @@ projects.display = function() {
             $(".project-entry:last").append(formattedProjectTitle);
             $(".project-entry:last").append(formattedProjectDates);
             $(".project-entry:last").append(formattedProjectDescription);
-            for(var img=0; img < projects.projects[i].images.length; img++) 
+            for(var img=0; img < projects.projects[i].images.length; img++) {
                 var formattedProjectImage = HTMLprojectImage.replace(data, projects.projects[i].images[img]);
                 $(".project-entry:last").append(formattedProjectImage);
             }
